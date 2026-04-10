@@ -101,13 +101,15 @@ jobs:
 
     steps:
       - name: Deploy to server
-        uses: appleboy/ssh-action@v1.0.3
+        uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           script: |
-            cd /home/ubuntu/devops-group1
+            cd /root/devops
             git pull origin main
             docker compose pull
+            docker compose up-d
             docker compose up -d
