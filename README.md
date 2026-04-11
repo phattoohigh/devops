@@ -72,6 +72,8 @@ npm test
 # Expected: 3 pass, 4 fail (until you fix the code)
 ```
 
+<!-- trigger redeploy -->
+
 ## Demo Flow (Fail-to-Fix)
 
 1. Create a branch with failing code
@@ -82,3 +84,4 @@ npm test
 6. Show CD deploying automatically
 7. Verify live application updated
 # devops
+
